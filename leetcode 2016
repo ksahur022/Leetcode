@@ -1,0 +1,22 @@
+class Solution {
+    public int maximumDifference(int[] nums) {
+        int n=nums.length;
+        int diff=0;
+        int max=0;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(i<j && nums[i]<nums[j]){
+                    diff=nums[j]-nums[i];
+                }
+                max=diff>max?diff:max;
+
+            }
+            
+        }
+    
+        if(max==0){
+            return -1;
+        }
+        return max;
+    }
+}
